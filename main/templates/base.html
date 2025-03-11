@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'book_list' %}">Home</a>
+    {% if request.user.is_authenticated %}
+        <span>Welcome, {{ request.user.username }}</span>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Signup</a>
+    {% endif %}
+</nav>
+
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
