@@ -63,7 +63,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'library_management.wsgi.application'
-
+ 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -136,7 +136,7 @@ AUTHENTICATION_BACKENDS=(
 
 # OAuth Credentials
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("GOOGLE_CLIENT_ID")
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("GOOGLE_CLIENT_SECRET", "default_value")
 
 SOCIAL_AUTH_GITHUB_KEY = os.getenv("GITHUB_CLIENT_ID")
 SOCIAL_AUTH_GITHUB_SECRET = os.getenv("GITHUB_CLIENT_SECRET")
@@ -145,7 +145,7 @@ SOCIAL_AUTH_GITHUB_SECRET = os.getenv("GITHUB_CLIENT_SECRET")
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
-REST_FRAMEWORK = {
+REST_FRAMEWORK = { 
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
