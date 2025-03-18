@@ -36,23 +36,24 @@
 	│── requirements.txt           # Python dependencies
 	│── manage.py                  # Django management script
 
+## Setup for Local
 
-3.1 Clone the Repository
+1 Clone the Repository
 
 	git clone https://github.com/aDiTyA-2712/library-management.git
 	cd library-management
 	
-3.2 Create a Virtual Environment(if used)
+2 Create a Virtual Environment(if used)
 
 	python -m venv env
 	source env/bin/activate  # Mac/Linux
 	env\Scripts\activate     # Windows
 
-3.3 Install Dependencies
+3 Install Dependencies
 
 	pip install -r requirements.txt
 
-3.4 Configure Environment Variables
+4 Configure Environment Variables
 
 	Create a .env file in the root directory:
 	GOOGLE_CLIENT_ID=your_google_client_id
@@ -64,17 +65,17 @@
 
 	Ensure .env is ignored in .gitignore:
 		
-3.5 Create a Database ( Here PG is used ) and apply migrations
+5 Create a Database ( Here PG is used ) and apply migrations
 	
 	python manage.py makemigrations
 	python manage.py migrate
 
-3.6 Create a Superuser (for Django Admin Panel)
+6 Create a Superuser (for Django Admin Panel)
 
 	python manage.py createsuperuser
 	then enter your username and password
 	
-3.7 Run the Development Server	
+7 Run the Development Server	
 
 	python manage.py runserver
 
@@ -83,48 +84,55 @@
 		Frontend (Django Templates) → http://127.0.0.1:8000/
 		Admin Panel → http://127.0.0.1:8000/admin/
 
-4. Features & API Endpoints
-	4.1 Book Management
-		List Books: GET /books/
-		Add a Book: POST /books/
-		Retrieve a Book: GET /books/<id>/
-		Update a Book: PUT /books/<id>/
-		Delete a Book: DELETE /books/<id>/
-	4.2 Borrow & Return Books
+## Features & API Endpoints
+
+	1 Book Management
+	
+		- List Books: GET /books/
+		- Add a Book: POST /books/
+		- Retrieve a Book: GET /books/<id>/
+		- Update a Book: PUT /books/<id>/
+		- Delete a Book: DELETE /books/<id>/
+		
+	2 Borrow & Return Books
+	
 		Borrow a Book: POST /books/<id>/borrow/
 		Return a Book: POST /books/<id>/return/
-	4.3 Authentication (OAuth Login)
+		
+	3 Authentication (OAuth Login)
+	
 		Google Login: http://127.0.0.1:8000/auth/social/login/google/
 		GitHub Login: http://127.0.0.1:8000/auth/social/login/github/	
 		
 		
-5. Running Tests
-	5.1 Run Unit Tests
+## Running Tests
+
+	1 Run Unit Tests
 
 		python manage.py test
 		
-	5.2 Test Borrow & Return Features
+	2 Test Borrow & Return Features
 	
 		python manage.py test books.tests
 	
-For Deployement we can do it on different cloud services like AWS,Heroku
+**For Deployement we can do it on different cloud services like AWS,Heroku
 
-Deploying on Heroku
+## Deploying on Heroku
 	
 	1.Install Heroku CLI:
 	
-	 pip install gunicorn django-heroku
+	 - pip install gunicorn django-heroku
 	
 	2.Add Procfile
 	
-	 web: gunicorn library.wsgi --log-file -
+	 - web: gunicorn library.wsgi --log-file -
 	 
 	3.Deploy with Git:
 	
-	 git add .
-	 git commit -m "Deploying to Heroku"
-	 heroku create library-management-app
-	 git push heroku main
+	 - git add .
+	 - git commit -m "Deploying to Heroku"
+	 - heroku create library-management-app
+	 - git push heroku main
 	 
 	 
 
