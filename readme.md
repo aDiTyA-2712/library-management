@@ -1,12 +1,14 @@
-1. Overview
+## Library Management System
+
+## Overview
 	The Library Management System is a Django-based web application that enables users to manage books, track borrowing and returns, and integrate authentication via Google and GitHub. It includes features like:
 
-		- Book Management (Create, List, Borrow, Return)
-		- User Authentication via Google & GitHub OAuth
-		- Django Admin Panel for managing books and users
-		- Email Notifications for book borrowing and returns
+		- **Book Management (Create, List, Borrow, Return)
+		- **User Authentication via Google & GitHub OAuth
+		- **Django Admin Panel for managing books and users
+		- **Email Notifications for book borrowing and returns
 		
-2. Project Structure
+## Project Structure
 
 	library-management/
 	│── library/                   # Main Django project folder
